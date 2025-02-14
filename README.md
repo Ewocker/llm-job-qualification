@@ -1,77 +1,83 @@
-# LLM Job Assistant
+# Resume Job Fit Analyzer
 
-The LLM Job Assistant is a Python application that leverages local Large Language Models (LLMs) through Ollama to help streamline your job application process. It analyzes job descriptions and your resume to provide personalized insights and recommendations.
+A Streamlit web application that analyzes resumes against job postings using AI to provide personalized insights and recommendations.
 
 ## Features
 
-- **Resume Analysis**: Upload your resume to get detailed feedback and suggestions for improvement
-- **Job Description Analysis**: Input job listings to extract key requirements and responsibilities
-- **Skills Gap Analysis**: Compare your resume against job requirements to identify missing skills
-- **Customized Application Tips**: Receive tailored advice on how to position yourself for specific roles
+- **Resume Analysis**: Upload your resume in PDF format to get detailed feedback
+- **Job Posting Analysis**: Enter a job posting URL to analyze requirements
+- **AI-Powered Matching**: Uses OpenAI's GPT models to compare resume with job requirements
+- **Real-time Analysis**: Streaming response shows analysis as it's being generated
+- **Detailed Insights**:
+  - Fit Score (0-100)
+  - Strengths Analysis
+  - Gap Analysis
+  - Resume Improvement Suggestions
 
-## Getting Started
+## Live Demo
 
-### Prerequisites
-- Python 3.8+
-- Ollama installed and running locally
-- Required Python packages (see requirements.txt)
+Access the application at: [Streamlit Cloud URL]
 
-### Installation
-1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run Ollama locally
-4. Launch the application: `python main.py`
+## Local Development Setup
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd resume-job-fit-analyzer
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your OpenAI API key:
+```bash
+cp .env.example .env
+# Edit .env and add: OPENAI_API_KEY=your_api_key_here
+```
+
+4. Run the application:
+```bash
+streamlit run app.py
+```
+
+The application will be available at http://localhost:8501
 
 ## Usage
 
-1. Upload your resume in PDF format
-2. Paste the job description or provide the job listing URL
-3. Get instant analysis and recommendations
+1. Enter a job posting URL in the text input field
+2. Upload your resume in PDF format
+3. Click "Analyze" to get insights
+4. Review the analysis which includes:
+   - Overall fit score
+   - Key strengths matching the job requirements
+   - Potential gaps or areas for improvement
+   - Specific suggestions to enhance your resume
 
-## Future Enhancements
+## Technologies Used
 
-- Web-based user interface for easier interaction
-- Support for multiple resume formats
-- Integration with job boards for direct listing access
-- Enhanced resume improvement suggestions
-- Automated cover letter generation
+- **Streamlit**: Web application framework
+- **OpenAI API**: AI-powered analysis
+- **PyPDF2**: PDF text extraction
+- **BeautifulSoup4**: Web scraping for job postings
+- **Selenium**: JavaScript-enabled web scraping
 
-# React + Flask Project
+## Deployment
 
-This project consists of a React frontend and Flask backend.
+This application is deployed on Streamlit Cloud. To deploy your own instance:
 
-## Setup Instructions
+1. Fork this repository
+2. Go to [Streamlit Cloud](https://share.streamlit.io/)
+3. Create a new app pointing to your fork
+4. Add your OpenAI API key in Streamlit Cloud's secrets management
 
-1. Install dependencies:
-   ```bash
-   # Create and activate conda environment
-   conda env create -f environment.yml
-   conda activate llm-job-qualification
+## Contributing
 
-   # Install frontend dependencies
-   cd frontend
-   npm install
-   ```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-2. Build the frontend:
-   ```bash
-   cd frontend
-   npm run build
-   ```
+## License
 
-3. Set up environment variables:
-   Create a `.env` file in the root directory with:
-   ```
-   FLASK_APP=app.py
-   FLASK_ENV=development
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-
-4. Run the application:
-   ```bash
-   python app.py
-   ```
-
-The application will be available at http://localhost:5000
-
-Would you like me to explain any part of the setup in more detail?
+This project is licensed under the MIT License - see the LICENSE file for details.
