@@ -1,11 +1,11 @@
 import streamlit as st
 import os
 import requests
-from bs4 import BeautifulSoup
-from PyPDF2 import PdfReader
 import io
 from openai import OpenAI
 from dotenv import load_dotenv
+from bs4 import BeautifulSoup
+from PyPDF2 import PdfReader
 
 # Load environment variables
 load_dotenv(override=True)
@@ -71,7 +71,7 @@ def analyze_resume(resume_text, job_post_url):
         full_response = ""
         
         # Stream the response
-        stream = openai.chat.completions.create(
+        stream = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=messages,
             stream=True
