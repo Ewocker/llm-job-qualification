@@ -71,7 +71,7 @@ def analyze_resume(resume_text, job_post_url):
         full_response = ""
         
         # Stream the response
-        stream = client.chat.completions.create(
+        stream = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=messages,
             stream=True
