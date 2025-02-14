@@ -512,6 +512,7 @@ dependencies:
   - zstandard=0.23.0=py312h1a4646a_0
   - zstd=1.5.6=hfb09047_0
   - pip:
+      - flask-cors==5.0.0
       - ipython==8.32.0
       - ipywidgets==8.1.5
       - jupyterlab-widgets==3.0.13
